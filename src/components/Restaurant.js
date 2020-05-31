@@ -7,10 +7,41 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import Search from "./Search";
 
 import { hp, wp } from "./common";
 import { withNavigation } from "react-navigation";
+
+const TestMeal = [
+  {
+    name: "Cheese Burger",
+    topping: "Beef, Veggies & Chilli",
+    img: require("../images/meal1.png"),
+  },
+  {
+    name: "Jollof Rice",
+    topping: "Grilled Chicken, Veggies & Sauce",
+    img: require("../images/meal2.png"),
+  },
+  {
+    name: "Cheese Burger",
+    topping: "Beef, Veggies & Chilli",
+    img: require("../images/meal1.png"),
+  },
+];
+const RecommendedMeal = [
+  {
+    img: require("../images/reco1.png"),
+  },
+  {
+    img: require("../images/reco2.png"),
+  },
+  {
+    img: require("../images/reco3.png"),
+  },
+  {
+    img: require("../images/reco4.png"),
+  },
+];
 
 class Restaurant extends Component {
   render() {
@@ -19,7 +50,6 @@ class Restaurant extends Component {
         <Image style={styles.image} source={require("../images/Basket.png")} />
         <Text style={styles.hello}>Hello, John</Text>
         <Text style={styles.hello1}>Select your meal for the day</Text>
-        <Search />
       </View>
     );
   }
