@@ -29,8 +29,6 @@ class Login extends Component {
         <Text style={styles.headTwo}>Login to your account</Text>
 
         <View style={styles.textbox}>
-          {/* <Input placeholder="BASIC INPUT" /> */}
-
           <FloatingLabelInput
             label="Username"
             value={this.state.value}
@@ -55,7 +53,10 @@ class Login extends Component {
         </View>
 
         <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}>
+          <Text
+            style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}
+            onPress={() => this.props.navigation.navigate("Restaurant")}
+          >
             LOGIN
           </Text>
         </TouchableOpacity>
