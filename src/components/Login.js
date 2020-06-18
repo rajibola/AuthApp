@@ -1,12 +1,5 @@
 import React, { Component } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  TouchableOpacity,
-} from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
 import { hp, wp } from "./common";
 import { withNavigation } from "react-navigation";
 
@@ -52,11 +45,11 @@ class Login extends Component {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button}>
-          <Text
-            style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}
-            onPress={() => this.props.navigation.navigate("Restaurant")}
-          >
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => this.props.navigation.navigate("Restaurant")}
+        >
+          <Text style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}>
             LOGIN
           </Text>
         </TouchableOpacity>

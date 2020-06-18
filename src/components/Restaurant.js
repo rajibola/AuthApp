@@ -59,20 +59,22 @@ class Restaurant extends Component {
           />
         </View>
 
-        <FlatList
-          data={TestMeal}
-          renderItem={({ item }) => (
-            <View style={styles.card}>
-              <Image style={styles.img} source={item.img} />
-              <View style={styles.label}>
-                <Text style={styles.name}>{item.name}</Text>
-                <Text style={styles.topping}>{item.topping}</Text>
-                <Image source={item.rating} style={styles.rating} />
+        <View style={{ marginTop: hp(29) }}>
+          <FlatList
+            data={TestMeal}
+            renderItem={({ item }) => (
+              <View style={styles.card}>
+                <Image style={styles.img} source={item.img} />
+                <View style={styles.label}>
+                  <Text style={styles.name}>{item.name}</Text>
+                  <Text style={styles.topping}>{item.topping}</Text>
+                  <Image source={item.rating} style={styles.rating} />
+                </View>
               </View>
-            </View>
-          )}
-          keyExtractor={(item) => item.key}
-        />
+            )}
+            keyExtractor={(item) => item.key}
+          />
+        </View>
 
         <View
           style={{
@@ -206,7 +208,6 @@ const styles = StyleSheet.create({
 
   imgIcon: {
     marginTop: hp(13),
-
     height: hp(70),
     width: hp(63),
     resizeMode: "contain",

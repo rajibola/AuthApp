@@ -143,7 +143,10 @@ class Signup extends Component {
                 selected wallet.
               </Text>
 
-              <TouchableOpacity style={styles.button1}>
+              <TouchableOpacity
+                style={styles.button1}
+                onPress={() => this.props.navigation.navigate("Login")}
+              >
                 <Text
                   style={{
                     color: "#E25F38",
@@ -250,6 +253,7 @@ const styles = StyleSheet.create({
 
     backgroundColor: "#E25F38",
     borderRadius: wp(9),
+    letterSpacing: wp(-0.28),
   },
 
   button1: {
