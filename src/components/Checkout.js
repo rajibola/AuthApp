@@ -87,18 +87,19 @@ const Checkout = () => {
           keyExtractor={(item) => item.key}
         />
       </View>
-
-      <View style={styles.total}>
-        <Text style={styles.totaltext}>Total:</Text>
-        <Text style={styles.totalvalue}>NGN 20,000</Text>
-      </View>
-
-      <TouchableOpacity style={styles.button}>
-        <Text style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}>
-          CHECKOUT
-        </Text>
-      </TouchableOpacity>
-
+      {data.length > 0 ? (
+        <View style={styles.total}>
+          <Text style={styles.totaltext}>Total:</Text>
+          <Text style={styles.totalvalue}>NGN 20,000</Text>
+        </View>
+      ) : null}
+      {data.length > 0 ? (
+        <TouchableOpacity style={styles.button}>
+          <Text style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}>
+            CHECKOUT
+          </Text>
+        </TouchableOpacity>
+      ) : null}
       <View style={styles.rect}></View>
     </View>
   );
