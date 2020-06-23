@@ -5,7 +5,7 @@ import {
   View,
   Image,
   TouchableOpacity,
-  Button,
+  Animated,
   FlatList,
 } from "react-native";
 import { hp, wp } from "./common";
@@ -49,6 +49,12 @@ const Checkout = () => {
     });
   };
 
+  //animation
+  const position = new Animated.ValueXY({ x: wp(300), y: 0 });
+  Animated.timing(position, {
+    toValue: { x: 0, y: 0 },
+  }).start();
+
   return (
     <View style={styles.container}>
       <Text style={styles.head}>My Orders</Text>
@@ -60,9 +66,14 @@ const Checkout = () => {
         <FlatList
           data={data}
           ListEmptyComponent={() => (
-            <Text style={[styles.head, { marginTop: 0 }]}>
+            <Animated.Text
+              style={[
+                styles.head,
+                { marginTop: 0, transform: [{ translateX: position.x }] },
+              ]}
+            >
               There are no orders yet!
-            </Text>
+            </Animated.Text>
           )}
           deleteItem={deleteItem}
           renderItem={({ item }) => (
@@ -87,12 +98,14 @@ const Checkout = () => {
           keyExtractor={(item) => item.key}
         />
       </View>
+
       {data.length > 0 ? (
         <View style={styles.total}>
           <Text style={styles.totaltext}>Total:</Text>
           <Text style={styles.totalvalue}>NGN 20,000</Text>
         </View>
       ) : null}
+
       {data.length > 0 ? (
         <TouchableOpacity style={styles.button}>
           <Text style={{ color: "#fff", fontWeight: "500", fontSize: hp(14) }}>
@@ -105,7 +118,7 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+export default withNavigation(Checkout);
 
 const styles = StyleSheet.create({
   container: {
