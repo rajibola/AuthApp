@@ -53,6 +53,7 @@ const Checkout = () => {
   const position = new Animated.ValueXY({ x: wp(300), y: 0 });
   Animated.timing(position, {
     toValue: { x: 0, y: 0 },
+    duration: 4000,
   }).start();
 
   return (
